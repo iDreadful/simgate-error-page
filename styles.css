@@ -1,0 +1,168 @@
+@import "./system.css";
+
+
+body, html {
+  padding: 0;
+  margin: 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: var(--palette-info-main);
+}
+
+.stars {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.stars::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  animation-name: stars-slow;
+  animation-duration: 200s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  background: url("./images/stars-fast.svg");
+  background-size: cover;
+  background-position-x: 0%;
+  background-position-y: 50%;
+}
+
+.stars::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  animation-name: stars-slow;
+  animation-duration: 400s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  background: url("./images/stars-slow.svg");
+  background-size: cover;
+  background-position-x: 0%;
+  background-position-y: 50%;
+}
+
+.stars.action::before {
+   animation-duration: 10s;
+ }
+.stars.action::after {  
+   animation-duration: 20s;
+ }
+
+ .content {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  z-index: 1;
+  overflow: auto
+}
+
+.astronaut-box {
+  transition: all .5s ease-in-out;
+}
+
+.astronaut-box .astronaut-action {
+  position: absolute;
+  top: 51%;
+  left: 36%;
+  opacity: 0;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.astronaut-box.action{
+  transform: rotate(15deg);
+}
+
+.astronaut {
+  width: 300px;
+  height: 300px;
+  background-repeat: no-repeat;
+  background-position: center;
+  animation: astronaut-floating 50s infinite ease-in-out;
+  min-height: 200px;
+  background: url("./images/astronaut-normal.svg");
+  transition: all .5s ease-in-out;
+}
+
+.astronaut.action {
+  background: url("./images/astronaut-action.svg");
+}
+
+.regis-logo { 
+  width: 100px;
+  height: 100px;
+  background: url("./images/regis-loro.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  flex-shrink: 0;
+}
+
+.message-box {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing);
+  padding: var(--spacing);
+  border-radius: calc(var(--shape-border-radius) * 2);
+  backdrop-filter: blur(5px);
+  border: 1px solid #00000020;
+  width: 400px;
+}
+
+.message-box .title {
+  font: var(--typography-h2);
+  color: var(--palette-text-primary);
+  text-align: center;
+}
+
+.message-box .message {
+  font: var(--typography-body1);
+  color: var(--palette-text-secondary);
+}
+
+.message-box .error {
+  font: var(--typography-body1);
+  color: #ccc;
+  text-align: center;
+}
+
+.image-attribute {
+  padding: calc(var(--spacing) * 2);
+  opacity: 0.25;
+}
+
+@keyframes stars-slow {
+  from {
+    background-position-x: 0%;
+  }
+  to {
+    background-position-x: 100%;
+  }
+}
+
+@keyframes astronaut-floating {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-20deg);
+  }
+  50% {
+    transform: rotate(20deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}

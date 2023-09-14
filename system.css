@@ -1,0 +1,41 @@
+
+:root {
+  /* Spacing and shape */
+  --spacing: 1rem;
+  --shape-border-radius: 5px;
+
+  /* Palette */
+  --palette-primary-main: #343A49;
+  --palette-secondary-main: #F78E1E;
+  --palette-background-default: #fafafa;
+  --palette-background-paper: #ffffff;
+  --palette-info-main: #2196f3;
+
+  --palette-text-primary: #343A49;
+  --palette-text-secondary: #555555;
+  --palette-text-hint: #343A49;
+  
+  /* Typography */
+  --typography-fontFamily: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+  
+  --typography-body1-font-size: 12px;
+  --typography-body1-font-weight: normal;
+  --typography-body1: var(--typography-body1-font-weight) var(--typography-body1-font-size) var(--typography-fontFamily);
+  
+  --typography-body2-font-size: 10px;
+  --typography-body2-font-weight: normal;
+  --typography-body2: var(--typography-body2-font-weight) var(--typography-body2-font-size) var(--typography-fontFamily);
+  
+  --typography-h1-font-size: 24px;
+  --typography-h1-font-weight: bold;
+  --typography-h1: var(--typography-h1-font-weight) var(--typography-h1-font-size) var(--typography-fontFamily);
+
+  --typography-h2-font-size: 20px;
+  --typography-h2-font-weight: bold;
+  --typography-h2: var(--typography-h2-font-weight) var(--typography-h2-font-size) var(--typography-fontFamily);
+  
+  --typography-h4-font-size: 14px;
+  --typography-h4-font-weight: bold;
+  --typography-h4: var(--typography-h4-font-weight) var(--typography-h4-font-size) var(--typography-fontFamily);
+}
